@@ -1,0 +1,31 @@
+config {
+  width = 800
+  height = 600
+  mode = interactive
+  title = "Bouncing Ball"
+}
+
+let pos = (20, height/2)
+let vel = (10, 6)
+let r = 20
+
+loop {
+  clear()
+  vel.y += 0.6
+  pos += vel
+
+  if (pos.y + r > height) {
+      pos.y = height - r
+      vel.y = vel.y * -1
+  }
+
+  if (pos.x + r > width) {
+      pos.x = width - r
+      vel.x = vel.x * -1
+  } else if (pos.x - r < 0) {
+      pos.x = r
+      vel.x = vel.x * -1
+  }
+
+  draw Circle(pos, r, color=#00ff00)
+}

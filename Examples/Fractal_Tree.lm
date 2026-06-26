@@ -1,0 +1,26 @@
+config {
+  width = 600
+  height = 600
+  mode = interactive
+  title = "Fractal Tree"
+}
+
+let root = (400, 580)
+
+fn branch(pos: Vec2, ang, len, depth) {
+  let rad = ang * (pi / 180)
+  let end_x = pos.x + (cos(rad) * len)
+  let end_y = pos.y + (sin(rad) * len)
+  let end_pos = (end_x, end_y)
+  
+  draw Line(pos, end_pos, color = #ffffff)
+  if (depth > 0) {
+    branch(end_pos, ang - 20, len * 0.7, depth - 1)
+    branch(end_pos, ang + 20, len * 0.7, depth - 1)
+  }
+}
+
+loop {
+  clear()
+  branch(root, -90, 120, 7)
+}

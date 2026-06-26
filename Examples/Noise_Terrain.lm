@@ -1,0 +1,39 @@
+config {
+  width = 300
+  height = 300
+  mode = interactive
+  title = "Noise Terrain"
+}
+
+let t = 0
+let step = 4
+
+loop {
+  clear()
+  t = t + 0.01
+  
+  // Use step size directly in the range
+  for y in range(0, height / step) {
+    for x in range(0, width / step) {
+      let px = x * step
+      let py = y * step
+      let n = noise2(px * 0.03 + t, py * 0.03)
+      
+      if (n < -0.5) {
+        draw Rect((px, py), step, step, color = #000044)
+      } else if (n < -0.2) {
+        draw Rect((px, py), step, step, color = #0044aa)
+      } else if (n < 0) {
+        draw Rect((px, py), step, step, color = #44aadd)
+      } else if (n < 0.2) {
+        draw Rect((px, py), step, step, color = #88cc44)
+      } else if (n < 0.5) {
+        draw Rect((px, py), step, step, color = #44aa22)
+      } else if (n < 0.7) {
+        draw Rect((px, py), step, step, color = #886622)
+      } else {
+        draw Rect((px, py), step, step, color = #ffffff)
+      }
+    }
+  }
+}

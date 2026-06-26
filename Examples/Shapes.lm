@@ -1,0 +1,16 @@
+config {
+  width = 400
+  height = 400
+  fps = 30
+  mode = interactive
+  title = "Shapes Demo"
+}
+
+let center = (200, 200)
+
+loop {
+  clear()
+  draw Circle(center, 50, color = #ff0000)
+  draw Rect((50, 50), 100, 60, color = #00ff00)
+  draw Line((100, 300), (300, 100), color = #0000ff)
+}

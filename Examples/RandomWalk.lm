@@ -1,0 +1,27 @@
+config { 
+  fps = 20
+  mode = interactive
+  title = "Random Walk"
+}
+
+let pos_x = width/2
+let pos_y = height/2
+
+loop {
+    clear()
+    let dir = random(1, 4)
+    if (dir == 1) {
+        pos_y = pos_y - 5
+    } else if (dir == 2) {
+        pos_y = pos_y + 5
+    } else if (dir == 3) {
+        pos_x = pos_x - 5
+    } else {
+        pos_x = pos_x + 5
+    }
+    
+    pos_x = max(0, min(width, pos_x))
+    pos_y = max(0, min(height, pos_y))
+    
+    draw Rect((pos_x, pos_y), 5, 5)
+}

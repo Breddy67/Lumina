@@ -1,0 +1,10 @@
+config {
+  width = 400
+  height = 400
+  mode = interactive
+}
+
+loop {
+  clear()
+  draw Circle((200, 200), 50)
+}

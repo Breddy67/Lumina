@@ -1,0 +1,33 @@
+config {
+  width = 300
+  height = 300
+  mode = interactive
+  title = "Perlin Noise"
+}
+
+let scale = 0.02
+let step = 3
+
+loop {
+  clear()
+  let y = 0
+  for y in range(0, height) {
+    let x = 0
+    for x in range(0, width) {
+      let n = noise2(x * scale, y * scale)
+      let v = (n + 1) / 2
+      
+      if (v < 0.2) {
+        draw Rect((x, y), 1, 1, color = #111111)
+      } else if (v < 0.4) {
+        draw Rect((x, y), 1, 1, color = #333333)
+      } else if (v < 0.6) {
+        draw Rect((x, y), 1, 1, color = #555555)
+      } else if (v < 0.8) {
+        draw Rect((x, y), 1, 1, color = #777777)
+      } else {
+        draw Rect((x, y), 1, 1, color = #aaaaaa)
+      }
+    }
+  }
+}
