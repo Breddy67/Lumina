@@ -3,12 +3,3 @@
 
 __version__ = "0.1.0"
 
-from . import ast
-from . import lumina_types
-from . import tokeniser
-from . import parser
-from . import checker
-from . import codegen
-from . import predefined
-from . import errors
-from . import lumina_utils

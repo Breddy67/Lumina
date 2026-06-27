@@ -1,0 +1,29 @@
+Lumina Benchmark Results 
+========================== 
+ 
+980.0253
+777.1688
+976.7713
+9836.3867
+3236.0611
+3167.425
+ 
+File Sizes: 
+ Volume in drive C is Windows
+ Volume Serial Number is E44B-A095
+
+ Directory of C:\Users\brahm\OneDrive\Documents\projects\Lumina
+
+27-06-2026  09:20         1,472,533 bench_fractal.exe
+27-06-2026  09:20         1,473,009 bench_noise.exe
+27-06-2026  09:20         1,471,985 bench_simple.exe
+               3 File(s)      4,417,527 bytes
+               0 Dir(s)  647,001,825,280 bytes free
+ 
+C File Lines: 
+
+---------- BENCH_SIMPLE.C: 138
+
+---------- BENCH_NOISE.C: 167
+
+---------- BENCH_FRACTAL.C: 148

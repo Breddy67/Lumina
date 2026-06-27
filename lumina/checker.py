@@ -765,7 +765,7 @@ def check(prog: ast.Program) -> List[Diagnostic]:
 def print_diagnostics(diags: List[Diagnostic]) -> None:
     """Print diagnostics."""
     if not diags:
-        print("✓ No issues found.")
+        print("[OK] No issues found.")
         return
 
     errors = [d for d in diags if d.severity == Severity.ERROR]

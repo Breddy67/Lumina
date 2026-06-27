@@ -1,0 +1,21 @@
+config {
+  width = 400
+  height = 400
+}
+
+fn branch(px, py, ang, len, depth) {
+  let rad = ang * (pi / 180)
+  let end_x = px + (cos(rad) * len)
+  let end_y = py + (sin(rad) * len)
+  
+  draw Line((px, py), (end_x, end_y), color = #ffffff)
+  if (depth > 0) {
+    branch(end_x, end_y, ang - 20, len * 0.7, depth - 1)
+    branch(end_x, end_y, ang + 20, len * 0.7, depth - 1)
+  }
+}
+
+loop {
+  clear()
+  branch(200, 380, -90, 80, 6)
+}
